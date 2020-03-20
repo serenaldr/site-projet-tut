@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(46, 75, 136);
+            opacity: 0;
+        }
+
+        body.fade-out {
+            opacity: 1;
+            transition: 2s ease;
+        }
+
+        p {
+            font-size: 4rem;
+            margin: 20% 0 0 35%;
+            color: rgb(46, 75, 136);
+        }
+
+        .img {
+            position: absolute;
+            opacity: 0.95;
+            max-width: 600px;
+            max-height: 700px;
+            left: -5%;
+            top:-8%;
+            width: 30%;
+            padding: 5% 5%;
+            text-align: center;
+            background-color: white;
+            border-radius: 50%;
+            animation: cercle 6s linear infinite alternate forwards;
+            z-index: -3;
+        }
+
+        @keyframes cercle {
+
+            0%,
+            100% {
+                border-radius: 60% 37% 54% 46% / 55% 48% 52% 45%;
+            }
+
+            14% {
+                border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+            }
+
+            28% {
+                border-radius: 54% 46% 38% 62% / 49% 90% 30% 51%;
+            }
+
+            42% {
+                border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+            }
+
+            56% {
+                border-radius: 61% 39% 87% 33% / 70% 50% 50% 30%;
+            }
+
+            70% {
+                border-radius: 20% 50% 34% 66% / 56% 68% 32% 44%;
+            }
+
+            84% {
+                border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p class="img" data-depth="0.1">DEVELOPPER</p>
+    
+    <script>
+          setTimeout(function () {
+            document.body.className += ' fade-out';
+  }, 200);
+
+    </script>
+</body>
+
+</html>
