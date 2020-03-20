@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse Video</title>
+    
+    <style>
+        body {
+            margin: 0;
+        }
+        #vid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        div#container {
+            height: 20000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <video autobuffer preload id="vid">
+            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" src="https://www.html5rocks.com/tutorials/video/basics/Chrome_ImF.webm"></source>
+        </video>
+    </div>
+
+
+    <script>
+        var frameNumber = 0, playbackConst = 500, 
+     
+        vid = document.getElementById('vid'); 
+
+        function scrollPlay(){  
+        var frameNumber  = window.pageYOffset/playbackConst;
+        vid.currentTime  = frameNumber;
+        window.requestAnimationFrame(scrollPlay);
+        }
+
+        window.requestAnimationFrame(scrollPlay);
+    </script>
+
+</body>
+
+</html>
